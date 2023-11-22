@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+
+<!--ROS source-->
+<script type="text/javascript" src="eventemitter2.js"></script>
+<script type="text/javascript" src="roslib.min.js"></script>
+
+<!--bootstrap source-->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+<!-- vue source -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+</head>
+
+<body>
+  <div id="app" class="container">
+        
+        <button v-on:click="connect()" type="button" class="btn btn-outline-success" v-if="!connected">Connect to server!</button>
+        <button type="button" class="btn btn-success" v-if="connected">connected</button>
+        
+        <div class="row">
+        
+            <div class="col-md-12 text-center">
+                <h2>COMMAND</h2>
+            </div>
+            <!-- FIRST ROW  -->
+            <div class="col-md-4 text-center">
+                <button class="btn btn-outline-dark" v-if="!connected">Forward Left disabled</button>
+                <button v-on:click="goForwardLeft()" class="btn btn-dark" v-if="connected">Forward Left</button>
+            </div>
+
+            <div class="col-md-4 text-center">
+                <button class="btn btn-outline-dark" v-if="!connected">Forward disabled</button>
+                <button v-on:click="goForward()" class="btn btn-dark" v-if="connected">Forward</button>
+                <br><br>
+            </div>
+
+            <div class="col-md-4 text-center">
+                <button class="btn btn-outline-dark" v-if="!connected">Forward Right disabled</button>
+                <button v-on:click="goForwardRight()" class="btn btn-dark" v-if="connected">Forward Right</button>
+            </div>
+
+            <!-- SECOND ROW  -->
+            <div class="col-md-4 text-center">
+                <button class="btn btn-outline-dark" v-if="!connected">Turn Left disabled</button>
+                <button v-on:click="turnLeft()" class="btn btn-dark" v-if="connected">Turn Left</button>
+            </div>
+
+            <div class="col-md-4 text-center">
+                <button class="btn btn-outline-dark" v-if="!connected">Stop disabled</button>
+                <button v-on:click="goStop()" class="btn btn-danger" v-if="connected">Stop</button>
+                <br><br>
+            </div>
+
+            <div class="col-md-4 text-center">
+                <button class="btn btn-outline-dark" v-if="!connected">Right disabled</button>
+                <button v-on:click="turnRight()" class="btn btn-dark" v-if="connected">Right</button>
+            </div>
+
+             <!-- THIRD ROW  -->
+             <div class="col-md-4 text-center">
+                <button class="btn btn-outline-dark" v-if="!connected">Backward Left disabled</button>
+                <button v-on:click="goBackwardLeft()" class="btn btn-dark" v-if="connected">Backward Left</button>
+            </div>
+
+            <div class="col-md-4 text-center">
+                <button class="btn btn-outline-dark" v-if="!connected">Back disabled</button>
+                <button v-on:click="goBack()" class="btn btn-dark" v-if="connected">Back</button>
+            </div>
+
+            <div class="col-md-4 text-center">
+                <button class="btn btn-outline-dark" v-if="!connected">Backward Left disabled</button>
+                <button v-on:click="goBackwardRight()" class="btn btn-dark" v-if="connected">Backward Right</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+<!--bootstrap source-->
+<!-- JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script type="text/javascript" src="robot_dog_control.js"></script>
+</body>
+</html>
